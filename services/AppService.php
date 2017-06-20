@@ -6,6 +6,9 @@ use yii\data\SqlDataProvider;
 
 class AppService
 {
+	/*
+		Returns data of regions
+	*/
 	public static function getRegionsData()
 	{
 		$sql = "SELECT Continent, Region, COUNT(Name) AS Countries, AVG(LifeExpectancy) AS LifeDuration, SUM(Population) AS Population, SUM(countrycities) as Cities, SUM(countrylanguages) as Languages FROM Country 
