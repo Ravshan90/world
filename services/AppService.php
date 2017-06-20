@@ -8,7 +8,7 @@ class AppService
 {
 	public static function getRegionsData()
 	{
-		$sql = "SELECT Continent, Region, COUNT(Name) AS COUNTRIES, AVG(LifeExpectancy) AS LifeDuration, SUM(Population) AS POPULATION, SUM(countrycities) as cities, SUM(countrylanguages) as languages FROM Country 
+		$sql = "SELECT Continent, Region, COUNT(Name) AS Countries, AVG(LifeExpectancy) AS LifeDuration, SUM(Population) AS Population, SUM(countrycities) as Cities, SUM(countrylanguages) as Languages FROM Country 
 				LEFT JOIN (Select CountryCode, count(CountryCode) as countrycities from CITY group by CountryCode) country_cities ON Code = country_cities.CountryCode 
 				LEFT JOIN (Select CountryCode, count(CountryCode) as countrylanguages from CountryLanguage group by CountryCode) country_languages ON Code = country_languages.CountryCode 
 				GROUP BY Region";
@@ -32,11 +32,11 @@ class AppService
 						'attributes' => [
 							'Continent',
 							'Region',
-							'COUNTRIES',
+							'Countries',
 							'LifeDuration',
-							'POPULATION',
-							'cities',
-							'languages'
+							'Population',
+							'Cities',
+							'Languages'
 						]
 					]
 				]);

@@ -19,11 +19,11 @@ $this->title = 'My Yii Application';
 					'columns' => [
 						'Continent',
 						'Region',
-						'COUNTRIES',
+						'Countries',
 						'LifeDuration',
-						'POPULATION',
-						'cities',
-						'languages'
+						'Population',
+						'Cities',
+						'Languages'
 					],
 				]); ?>
 				<?php \yii\widgets\Pjax::end(); ?>
